@@ -10,10 +10,7 @@
 | 硬件 | 模型 | 后端 / 引擎 | 实测速度 | 链接 |
 |---|---|---|---|---|
 | **AMD Ryzen AI Max+ 395**(Strix Halo / gfx1151 / 128GB UMA) | Qwen3.8-Flash-Next 125B MoE(激活 6B) | Vulkan + 自编译 MTP fork | 29-40 t/s,视觉,256K ctx | [→ strix-halo-395](./strix-halo-395/) |
-
-<!-- 后续补充,例如:
-| **NVIDIA RTX PRO 6000 Blackwell**(96GB) | Qwen3.8-Flash-Next | vLLM + NVFP4 | — | [→ rtx-pro-6000](./rtx-pro-6000/) |
--->
+| **NVIDIA RTX PRO 6000 Blackwell**(96GB) | Qwen3.8-Flash-Next 125B MoE(激活 6B) | vLLM + Docker + NVFP4 | 60-100 t/s,视觉,工具调用,100K ctx | [→ rtx-pro-6000](./rtx-pro-6000/) |
 
 ## 为什么做这个聚合
 
@@ -27,7 +24,7 @@
 - **量化档位 = 质量 vs 速度 vs 显存的三角**,没有免费午餐;MoE 架构能"大而不慢"是特例;
 - **投机解码(MTP / draft)在对的硬件+模型上是真收益**,但参数要按实测调,盲目照抄别的平台的值经常负优化;
 - **上下文长度有物理天花板**,KV cache 吃显存,超了会 OOM 甚至把驱动搞崩——每篇都标了实测边界;
-- **生产化 = systemd 自启 + 看门狗 + 鉴权 + 防火墙**,不是把命令跑起来就完。
+- **生产化 = systemd/容器自启 + 看门狗 + 鉴权 + 防火墙**,不是把命令跑起来就完。
 
 ## 贡献 / 交流
 
