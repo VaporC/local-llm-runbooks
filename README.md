@@ -19,9 +19,7 @@
 | 硬件 | 模型 | 亮点 | 链接 |
 |---|---|---|---|
 | **NVIDIA RTX PRO 6000 Blackwell**(96GB) | Qwen3.8-27B(稠密 Q8) | ~95 t/s,256K ctx,显存仅 ~53GB,AMD 395 的 ~5 倍 | [→ 评测](./rtx-pro-6000/qwen3.8-27b-review.md) |
-<!-- 待补:
-| **AMD Ryzen AI Max+ 395** | Qwen3.8-27B(稠密 Q8) | — | [→ 评测](./strix-halo-395/qwen3.8-27b-review.md) |
--->
+| **AMD Ryzen AI Max+ 395**(Strix Halo 核显) | Qwen3.8-27B(稠密 Q6) | ~16.5 t/s,追质量速度腰斩,慢于同机 MoE,已退役——稠密吃带宽、核显是瓶颈的反面教材 | [→ 评测](./strix-halo-395/qwen3.8-27b-review.md) |
 
 ## 为什么做这个聚合
 
