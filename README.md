@@ -10,7 +10,7 @@
 | 硬件 | 模型 | 后端 / 引擎 | 实测速度 | 链接 |
 |---|---|---|---|---|
 | **AMD Ryzen AI Max+ 395**(Strix Halo / gfx1151 / 128GB UMA) | Qwen3.8-Flash-Next 125B MoE(激活 6B) | Vulkan + 自编译 MTP fork | 29-40 t/s,视觉,256K ctx | [→ strix-halo-395](./strix-halo-395/) |
-| **NVIDIA RTX PRO 6000 Blackwell**(96GB) | Qwen3.8-Flash-Next 125B MoE(激活 6B) | vLLM + Docker + NVFP4 | 60-100 t/s,视觉,工具调用,100K ctx | [→ rtx-pro-6000](./rtx-pro-6000/) |
+| **NVIDIA RTX PRO 6000 Blackwell**(96GB) | Qwen3.8-Flash-Next 125B MoE(激活 6B),NVIDIA 官方 FP4-Local | vLLM + Docker(b12x 内核,FP8 KV) | 145-195 t/s,8 路聚合 618 t/s,视觉,工具调用,262K ctx,16 路并发 | [→ rtx-pro-6000](./rtx-pro-6000/) |
 
 ## 📊 模型测评
 
